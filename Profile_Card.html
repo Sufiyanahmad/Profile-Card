@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #e0e7ff, #c3ddfd);
+        }
+
+        .profile-card {
+            position: relative;
+            width: 320px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-header {
+            position: relative;
+            height: 150px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-img {
+            position: absolute;
+            bottom: -70px;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-card:hover .profile-img {
+            transform: scale(1.1);
+        }
+
+        .profile-content {
+            padding: 80px 20px 20px;
+            text-align: center;
+        }
+
+        .profile-content h2 {
+            font-size: 24px;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .profile-content .title {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+
+        .profile-content p {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: #f3f4f6;
+            border-radius: 50%;
+            color: #3b82f6;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #3b82f6;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #3b82f6;
+            color: #fff;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="profile-img">
+                <img src="C:\Users\Sufiy\OneDrive\Desktop\My Works\My Programs\HTML_CSS_Js Programs\Profile_Card\DP icon.ico" alt="Profile Picture">
+            </div>
+        </div>
+        <div class="profile-content">
+            <h2>Sufiyan Ahmad</h2>
+            <div class="title">Student</div>
+            <p>Passionate about creating beautiful and functional web experiences. Skilled in React, JavaScript, and modern CSS.</p>
+            <div class="social-icons">
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <a href="mailto:sufiyanahmad065@email.com" class="contact-btn">Contact Me</a>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        // Add subtle animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const card = document.querySelector('.profile-card');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                card.style.transition = 'all 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
